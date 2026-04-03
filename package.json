@@ -2,11 +2,25 @@
   "name": "hyperactive_2026",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.7.0",
+    "mongoose": "^9.3.3",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2"
+  }
 }
