@@ -3,26 +3,29 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import connectDB from "../../shared/db/connection.js";
-import authRoutes from "./src/routes/authRoutes.js";
-import workspaceRoutes from "../workspace-service/src/routes/workspaceRoutes.js";
+import workspaceRoutes from "./src/routes/workspaceRoutes.js";
 
 dotenv.config();
 
 const app = express();
 
+// middleware
 app.use(cors());
 app.use(express.json());
 
-
 // routes
-app.use("/", authRoutes);
 app.use("/", workspaceRoutes);
 
-const PORT = process.env.PORT || 5001;
+// health check
+app.get("/", (req, res) => {
+  res.send("Workspace Service running 🧠");
+});
 
-// connect DB first
+const PORT = process.env.PORT || 5002;
+
+// connect DB FIRST
 await connectDB();
 
 app.listen(PORT, () => {
-    console.log(`Auth service running on port ${PORT}`);
+  console.log(`Workspace service running on port ${PORT}`);
 });
