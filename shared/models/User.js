@@ -15,14 +15,24 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+
     password: {
       type: String,
       required: true,
     },
+
+    avatar: {
+      type: String,
+      default: "",
+    },
+
+    // ✅ useful for dashboard
+    currentWorkspace: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Workspace",
+    },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 export default mongoose.model("User", userSchema);
