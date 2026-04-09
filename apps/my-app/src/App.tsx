@@ -4,7 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Login from "../../../services/auth-service/app/src/pages/Login.tsx";
 import Register from "../../../services/auth-service/app/src/pages/Register.tsx";
-import Dashboard from "../../../services/workspace-service/app/src/pages/Dashboard.tsx";
+import WorkspaceApp from "../../../services/workspace-service/app/src/App.tsx";
+import { WorkspaceProvider } from "../../../services/workspace-service/app/src/context/WorkspaceContext.tsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 // import Sidebar from "./components/Sidebar";
 
@@ -20,10 +21,12 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route
-            path="/dashboard"
+            path="/*"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <WorkspaceProvider>
+                  <WorkspaceApp />
+                </WorkspaceProvider>
               </ProtectedRoute>
             }
           />

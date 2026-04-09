@@ -1,9 +1,7 @@
-import "../index.css";
 import { loginUser } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../components/AuthLayout.tsx";
 import { useState } from "react";
-
 
 export default function Login() {
   const navigate = useNavigate();
