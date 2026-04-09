@@ -9,4 +9,7 @@ export default defineConfig({
       allow: ["../../.."],
     },
   },
+  resolve: {
+    dedupe: ['react', 'react-dom', 'react-router-dom', 'lucide-react'],
+  },
 })
