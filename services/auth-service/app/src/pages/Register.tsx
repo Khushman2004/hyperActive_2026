@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthLayout from "../components/AuthLayout";
-import { registerUser } from "../../../src/api/auth.ts";
+import AuthLayout from "../components/AuthLayout.tsx";
+import { registerUser } from "../api/auth";
 
 export default function Register() {
   const navigate = useNavigate();

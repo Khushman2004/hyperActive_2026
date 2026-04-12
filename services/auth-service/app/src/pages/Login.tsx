@@ -1,9 +1,10 @@
-import { loginUser } from "../../../src/api/auth.ts";
-import { Link } from "react-router-dom";
-import AuthLayout from "../components/AuthLayout";
+import { loginUser } from "../api/auth";
+import { Link, useNavigate } from "react-router-dom";
+import AuthLayout from "../components/AuthLayout.tsx";
 import { useState } from "react";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,7 +18,8 @@ export default function Login() {
 
       localStorage.setItem("token", res.data.token);
 
-      alert("Login successful");
+      // alert("Login successful");
+      navigate("/dashboard");
     } catch (err: any) {
       alert(err.response?.data?.message || "Login failed");
     }
