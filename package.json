@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npm run dev --prefix apps/frontend\" \"npm run dev --prefix services/gateway\" \"npm run dev --prefix services/auth-service\" \"npm run dev --prefix services/user-service\""
+    "dev": "concurrently \"npm run dev --prefix services/auth-service\" \"npm run dev --prefix services/gateway-service\" \"npm run dev --prefix services/workspace-service\" \"npm run dev --prefix services/workspace-service/app\""
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.27",
+    "concurrently": "^9.1.2",
     "nodemon": "^3.1.14",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2"
